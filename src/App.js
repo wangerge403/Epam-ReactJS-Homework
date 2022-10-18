@@ -1,22 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import {Task1CreateEle, Task1Comp, Task1PureComp, Task1Func} from './Task1';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Task1CreateEle name={'CreateElement'} />
+        <Task1Comp name={'Component'} />
+        <Task1PureComp name={'PureComponent'} />
+        <Task1Func name={'Functional Component'} />
       </header>
     </div>
   );
