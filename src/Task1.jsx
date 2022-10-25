@@ -42,7 +42,7 @@ class Task1Comp extends React.Component {
     render(){
         return (
             <div>
-                <div>Hello, {this.state.name}</div>
+                <div>Hello, {this.props.name}</div>
                 <button style={{width: '60px'}} onClick={this.handleReduce}>Reduce</button>
                 <button style={{margin: '0 10px'}}>{this.state.count}</button>
                 <button style={{width: '60px'}} onClick={this.handleAdd}>Add</button>
