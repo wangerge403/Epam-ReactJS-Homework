@@ -14,13 +14,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "serve": "webpack serve --config webpack.dev.js --color --progress --hot",
+    "build": "webpack --config webpack.prod.js --color --progress",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint": "lint-staged",
-    "esfix": "eslint --ext .ts,.jsx,.tsx --fix --quiet"
+    "esfix": "eslint --ext .ts,.jsx,.tsx,.react --fix --quiet"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +49,8 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.10",
@@ -56,6 +58,8 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-eslint": "^15.0.1",
+    "style-loader": "^3.3.1",
+    "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
   },
   "lint-staged": {
