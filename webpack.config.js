@@ -10,13 +10,24 @@ module.exports = {
     filename: '[name].bundle.js',
     publicPath: '',
   },
+  resolve: {
+    extensions: ['.jsx', '.js'],
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx|png|svg|ico|css)?$/,
-        use: ['babel-loader', 'style-loader', 'css-loader'],
+        test: /\.(js|jsx|png|svg|ico)?$/,
+        use: ['babel-loader'],
         exclude: /node_modules/,
       },
+      {
+        test: /\.(css)$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      // {
+      //   test: /\.(html)$/,
+      //   use: ['html-loader'],
+      // },
     ],
   },
   devServer: {

@@ -4,7 +4,6 @@
  * React.PureComponent
  * Functional component
  */
-
 import React from 'react';
 
 function Task1CreateEle(props) {
