@@ -1,0 +1,13 @@
+node_modules/
+
+build/
+
+*-lock*
+
+*.lock
+
+public/
+
+**/font/
+
+docs/
