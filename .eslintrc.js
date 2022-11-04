@@ -2,13 +2,13 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    es6: true,
+    es6: true
   },
   extends: ['plugin:react/recommended', 'prettier'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['prettier', 'react'],
   rules: {
@@ -19,5 +19,7 @@ module.exports = {
     quotes: [2, 'single'],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'react/prop-types': 0,
-  },
+    semi: 0,
+    'comma-dangle': ['off', 'never']
+  }
 };
