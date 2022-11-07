@@ -5,9 +5,16 @@ const path = require('path');
 module.exports = merge(base, {
   mode: 'development',
   devServer: {
-    static: [path.resolve(__dirname, 'dist'), path.resolve(__dirname, 'public')],
     host: 'localhost',
     port: 8080,
     open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
   },
 });

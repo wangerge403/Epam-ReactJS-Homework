@@ -13,15 +13,15 @@ class MovieList extends React.Component {
     isModalOpen: false
   };
 
-  addMovie = () => {
+  addMovie() {
     // 添加电影
   };
-  handleConfirm = () => {
+  handleConfirm() {
     this.setState({
       isModalOpen: false
     })
   };
-  handleCancel = () => {
+  handleCancel() {
     this.setState({
       isModalOpen: false
     })
