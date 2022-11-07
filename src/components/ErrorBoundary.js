@@ -16,7 +16,7 @@ class Error extends Component {
 
   render() {
     if (this.state.errorInfo) {
-      return <div>发生一些错误</div>;
+      return <div>Somthing Error</div>
     }
     return this.props.children;
   }
