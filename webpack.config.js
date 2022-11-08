@@ -30,8 +30,9 @@ module.exports = {
       // },
     ],
   },
-  devServer: {
+  devServer:{
     hot: true,
+    open:true,
   },
   plugins: [
     new HtmlWebpackPlugin({

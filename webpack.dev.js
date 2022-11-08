@@ -1,20 +1,27 @@
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const base = require('./webpack.config.js');
-const path = require('path');
+const path = require("path");
+const baseWebpackConfig = require("./webpack.config.js");//基础配置
 
-module.exports = merge(base, {
+let config = merge(baseWebpackConfig, {
+  /*设置开发环境*/
   mode: 'development',
+  output: {
+    path: path.resolve('src'),
+    filename: 'js/[name].js',
+    chunkFilename: "js/[name].js",
+    publicPath: ''
+  },
+  plugins: [
+    /*设置热更新*/
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  /*设置api转发*/
   devServer: {
     host: 'localhost',
     port: 8080,
-    open: true,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8080',
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
-    }
-  },
+    hot: true,
+    historyApiFallback: true,
+  }
 });
+module.exports = config;
