@@ -1,7 +1,8 @@
 import React from 'react';
 import MovieItem from '../../components/movies/MovieItem';
-import ModalBox from '../../components/ModalBox';
-import '../../styles/movieslist.css';
+// import ModalBox from '../../components/ModalBox';
+import MovieModal from '../../components/movies/MovieModal';
+import './index.css';
 
 class MovieList extends React.Component {
   constructor(){
@@ -22,53 +23,39 @@ class MovieList extends React.Component {
     // 请求数据
   }
   addMovie = () => {
-    this.setState({
-      isModalOpen: true
-    })
+    
   };
   handleConfirm = () => {
-    // api
-    this.setState({
-      isModalOpen: false
-    })
+    
   };
   handleCancel = () => {
-    this.setState({
-      isModalOpen: false
-    })
+    
   };
   onChangeName = (e) => {
-    let value = e.target.value;
-    this.setState({ movieName: value });
+    
   };
 
   onChangeScore = (e) => {
-    let value = e.target.value;
-    this.setState({ score: value });
+    
   };
   onEditMovieInfo = (item) => {
-    this.setState({
-      isModalOpen: true,
-      movieName: item.title,
-      score: item.rating
-    })
+    
   }
   render() {
     const { movies, title, movieName, score, isModalOpen } = this.state;
     return (
       <div>
         <div>
-          <button onClick={this.addMovie}>Add movie</button>
+          <button onClick={this.addMovie} className="add-btn">+ADD MOVIE</button>
+          <input className='search-inp' type="text" />
+          <button onClick={this.addMovie} className="search-btn">SEARCH</button>
         </div>
-        <div className="movies-wrap">
+        <div className="">
           {movies.map((item) =>{
             return <MovieItem editMovieInfo={this.onEditMovieInfo(item)} {...item} key={item.id}></MovieItem>
           })}
         </div>
-        {/* <ModalBox title={title} isOpen={isModalOpen} onConfirm={this.handleConfirm} onCancel={this.handleCancel}>
-          <label>name: </label><input onChange={(e) => this.onChangeName(e)} value={movieName} placeholder=""></input>
-          <label>score: </label><input onChange={(e) => this.onChangeScore(e)} value={score} placeholder=""></input>
-        </ModalBox> */}
+        <MovieModal />
       </div>
     );
   }
