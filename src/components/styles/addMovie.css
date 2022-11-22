@@ -1,32 +1,79 @@
-.mask{
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	left: 0;
-	top: 0;
-	background: rgba(35, 35, 35, 0.918051);
-	opacity: 0.89;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 .content{
-	width: 976px;
-	height: 918px;
+	width: 860px;
+	height: 800px;
 	background: #232323;
-	border: 1px solid #fff;
+	padding: 60px;
+	position: relative;
+}
+.wrap{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 38px;
 }
 .btn{
 	border: none;
 	width: 180px;
 	height: 58px;
+	cursor: pointer;
+}
+
+.sub-title{
+	color: #F65261;
+	font-size: 16px;
+	line-height: 20px;
+	margin-bottom: 13px;
+}
+
+.inp{
+	opacity: 0.8;
+	border-radius: 4px;
+	background: rgba(50, 50, 50, 0.949);
+	border: none;
+	outline: none;
+	margin-bottom: 30px;
+	padding-left: 18px;
+	font-size: 18px;
+}
+
+.left-inp{
+	width: 510px;
+	height: 58px;
+}
+
+.right-inp{
+	width: 280px;
+	height: 58px;
+}
+
+.bottom-inp{
+	padding: 18px;
+	width: 824px;
+}
+
+.close-icon{
+	color: #fff;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	font-size: 30px;
+}
+
+.btn-wrap{
+	display: flex;
+	justify-content: right;
+	margin-top: 10px;
 }
 .reset-btn{
 	border: 1.5px solid #F65261;
 	border-radius: 4px;
+	color: #F65261;
+	background-color: transparent;
+	margin-right: 13px;
 }
 .submit-btn{
 	background: #F65261;
 	border-radius: 4px;
+	color: #fff;
 }
 

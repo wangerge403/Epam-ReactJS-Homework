@@ -1,30 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/MovieItem.css';
 
-export default class MovieItem extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {};
-  }
-  componentDidMount() {
-  }
-  deleteCurrentMovie = (id) => {
+export default function MovieItem (props) {
+  const [state, setState] = useState({
+    isMenuOpen: false
+  });
+  const deleteCurrentMovie = (id) => {
     // ...action
     console.log('delete movie', id)
   } 
-  editMovieInfo = () => {
-    this.props.editMovieInfo();
+  const editMovieInfo = () => {
+    props.editMovieInfo();
   }
-  render() {
-    return (
-      <div className="movie-item">
-        <div>movie name: {this.props.title}</div>
-        <div>score: {this.props.rating}</div>
-        <div>
-          <button onClick={this.editMovieInfo}>Edit</button>
-          <button onClick={this.deleteCurrentMovie}>Delete</button>
-        </div>
+  return (
+    <div className="movie-item">
+      <img className='cover-img' src={props.coverImg} alt='cover image'/>
+      <div>
+        <div className='item-title'>movie name: {props.title}</div>
+        <div className='date'>{props.date}</div>
       </div>
-    )
-  }
+      <div className='genre'>{props.genre}</div>
+      <div>
+      </div>
+      {state.isMenuOpen && <div className='item-menu'>
+        <div className='close'>X</div>
+        <div className='edit' onClick={editMovieInfo}>Edit</div>
+        <div className='delete'>delete</div>
+      </div>}
+      
+    </div>
+  )
 }
